@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tours</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>Dream Travel</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="booking.html">Booking</a>
+    </div>
+</nav>
+
+<div class="cards">
+    <div class="card">
+        <h3>Everest Trek</h3>
+        <button class="btn" onclick="goBooking()">Book</button>
+    </div>
+
+    <div class="card">
+        <h3>Pokhara Tour</h3>
+        <button class="btn" onclick="goBooking()">Book</button>
+    </div>
+</div>
+
+<script>
+function goBooking(){
+    const s=document.createElement("div");
+    s.className="transition";
+    s.innerHTML='<div class="plane">✈️</div>';
+    document.body.appendChild(s);
+
+    setTimeout(()=>location.href="booking.html",2000);
+}
+</script>
+
+</body>
+</html>
