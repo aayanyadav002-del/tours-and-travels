@@ -22,16 +22,21 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // SIGNUP
-window.signup = async function(){
+function signup(){
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Account created!");
-    } catch(e){
-        alert(e.message);
+    if(!email || !password){
+        alert("Please enter email and password");
+        return;
     }
+
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return;
+    }
+
+    // continue firebase signup...
 }
 
 // LOGIN
